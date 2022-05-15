@@ -76,23 +76,3 @@ fun BottomNavigationBar(
     }
 
 }
-
-//@Composable
-//fun BuyingScreen() {
-//    Box(
-//        modifier = Modifier.fillMaxSize(),
-//        contentAlignment = Alignment.Center
-//    ) {
-//        Text(text = "buy")
-//    }
-//}
-//
-//@Composable
-//fun SellingScreen() {
-//    Box(
-//        modifier = Modifier.fillMaxSize(),
-//        contentAlignment = Alignment.Center
-//    ) {
-//        Text(text = "sell")
-//    }
-//}
