@@ -47,6 +47,10 @@ fun BuyingScreen(navController: NavController) {
                     ProdForBuyCard_1()
                     ProdForBuyCard_2()
                 }
+                Row {
+                    ProdForBuyCard_3()
+                    ProdForBuyCard_4()
+                }
             }
         }
 
@@ -140,6 +144,84 @@ fun ProdForBuyCard_2() {
             Image(
                 painter = painterResource(id = R.drawable.fashion_watch),
                 contentDescription = "fashon_watch",
+                modifier = Modifier
+                    .size(
+                        width = 150.dp,
+                        height = 150.dp
+                    ),
+                contentScale = ContentScale.Crop
+            )
+            Text(
+                text = "スマートウォッチ",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold
+            )
+            Text(text = "20000円")
+
+        }
+    }
+}
+
+@Composable
+fun ProdForBuyCard_3() {
+    Card(
+        modifier = Modifier
+            .background(
+                color = Color.White,
+                shape = RoundedCornerShape(50)
+            )
+            .padding(
+                top = 20.dp,
+                start = 20.dp,
+                end = 20.dp,
+                bottom = 20.dp
+
+            ),
+        elevation = 10.dp
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                painter = painterResource(id = R.drawable.omocha_game),
+                contentDescription = "omocha_game",
+                modifier = Modifier
+                    .size(
+                        width = 150.dp,
+                        height = 150.dp
+                    ),
+                contentScale = ContentScale.Crop
+            )
+            Text(
+                text = "スマートウォッチ",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold
+            )
+            Text(text = "20000円")
+
+        }
+    }
+}
+
+@Composable
+fun ProdForBuyCard_4() {
+    Card(
+        modifier = Modifier
+            .background(
+                color = Color.White,
+                shape = RoundedCornerShape(50)
+            )
+            .padding(
+                top = 20.dp,
+                start = 20.dp,
+                end = 20.dp,
+                bottom = 20.dp
+
+            ),
+        elevation = 10.dp
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                painter = painterResource(id = R.drawable.shoes_sneaker),
+                contentDescription = "shoes",
                 modifier = Modifier
                     .size(
                         width = 150.dp,
