@@ -88,10 +88,6 @@ fun AmtMyWallet() {
 fun ProdForBuyCard_1() {
     Card(
         modifier = Modifier
-            .background(
-                color = Color.White,
-                shape = RoundedCornerShape(50)
-            )
             .padding(
                 top = 20.dp,
                 start = 20.dp,
@@ -99,7 +95,8 @@ fun ProdForBuyCard_1() {
                 bottom = 20.dp
 
             ),
-        elevation = 10.dp
+        elevation = 10.dp,
+        shape = RoundedCornerShape(20.dp)
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
@@ -127,10 +124,6 @@ fun ProdForBuyCard_1() {
 fun ProdForBuyCard_2() {
     Card(
         modifier = Modifier
-            .background(
-                color = Color.White,
-                shape = RoundedCornerShape(50)
-            )
             .padding(
                 top = 20.dp,
                 start = 20.dp,
@@ -138,7 +131,8 @@ fun ProdForBuyCard_2() {
                 bottom = 20.dp
 
             ),
-        elevation = 10.dp
+        elevation = 10.dp,
+        shape = RoundedCornerShape(20.dp)
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
@@ -166,18 +160,14 @@ fun ProdForBuyCard_2() {
 fun ProdForBuyCard_3() {
     Card(
         modifier = Modifier
-            .background(
-                color = Color.White,
-                shape = RoundedCornerShape(50)
-            )
             .padding(
                 top = 20.dp,
                 start = 20.dp,
                 end = 20.dp,
                 bottom = 20.dp
-
             ),
-        elevation = 10.dp
+        elevation = 10.dp,
+        shape = RoundedCornerShape(20.dp)
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
@@ -205,10 +195,6 @@ fun ProdForBuyCard_3() {
 fun ProdForBuyCard_4() {
     Card(
         modifier = Modifier
-            .background(
-                color = Color.White,
-                shape = RoundedCornerShape(50)
-            )
             .padding(
                 top = 20.dp,
                 start = 20.dp,
@@ -216,7 +202,8 @@ fun ProdForBuyCard_4() {
                 bottom = 20.dp
 
             ),
-        elevation = 10.dp
+        elevation = 10.dp,
+        shape = RoundedCornerShape(20.dp)
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
