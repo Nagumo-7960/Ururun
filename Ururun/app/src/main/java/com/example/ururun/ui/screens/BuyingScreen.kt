@@ -2,6 +2,7 @@ package com.example.ururun.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -21,6 +22,10 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.ururun.R
+
+var amtMyWallet: Int = 3000000
+
+
 
 @Composable
 fun BuyingScreen(navController: NavController) {
@@ -45,26 +50,31 @@ fun BuyingScreen(navController: NavController) {
                 }
             }
 
-
-            Column (
-                modifier = Modifier.padding(
-                    top = 30.dp
-                )
-                    ){
-                Row {
-                    ProdForBuyCard_1()
-                    ProdForBuyCard_2()
-                }
-                Row {
-                    ProdForBuyCard_3()
-                    ProdForBuyCard_4()
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(
+                    modifier = Modifier.padding(
+                        top = 30.dp
+                    )
+                ) {
+                    Row {
+                        ProdForBuyCard_1()
+                        ProdForBuyCard_2()
+                    }
+                    Row {
+                        ProdForBuyCard_3()
+                        ProdForBuyCard_4()
+                    }
                 }
             }
+
             Box(
                 contentAlignment = Alignment.Center,
                 modifier = Modifier
                     .fillMaxSize()
-                    ){
+            ) {
                 BuyButton()
             }
         }
@@ -90,7 +100,7 @@ fun MyWalletIcon() {
 @Composable
 fun AmtMyWallet() {
     Text(
-        text = "3,000,000",
+        text = amtMyWallet.toString() + "円",
         modifier = Modifier
             .padding(
                 start = 10.dp
@@ -101,6 +111,7 @@ fun AmtMyWallet() {
 
 @Composable
 fun ProdForBuyCard_1() {
+    val value:Int = 30000
     Card(
         modifier = Modifier
             .padding(
@@ -109,7 +120,10 @@ fun ProdForBuyCard_1() {
                 end = 20.dp,
                 bottom = 20.dp
 
-            ),
+            )
+            .clickable {
+                       amtMyWallet = amtMyWallet-value
+            },
         elevation = 10.dp,
         shape = RoundedCornerShape(20.dp)
     ) {
@@ -129,7 +143,7 @@ fun ProdForBuyCard_1() {
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold
             )
-            Text(text = "30000円")
+            Text(text = value.toString()+"円")
 
         }
     }
@@ -137,6 +151,7 @@ fun ProdForBuyCard_1() {
 
 @Composable
 fun ProdForBuyCard_2() {
+    val value:Int = 20000
     Card(
         modifier = Modifier
             .padding(
@@ -157,7 +172,10 @@ fun ProdForBuyCard_2() {
                     .size(
                         width = 150.dp,
                         height = 150.dp
-                    ),
+                    )
+                    .clickable {
+                        amtMyWallet = amtMyWallet-value
+                    },
                 contentScale = ContentScale.Crop
             )
             Text(
@@ -165,7 +183,7 @@ fun ProdForBuyCard_2() {
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold
             )
-            Text(text = "20000円")
+            Text(text = value.toString()+"円")
 
         }
     }
@@ -173,6 +191,7 @@ fun ProdForBuyCard_2() {
 
 @Composable
 fun ProdForBuyCard_3() {
+    val value:Int = 25000
     Card(
         modifier = Modifier
             .padding(
@@ -192,15 +211,18 @@ fun ProdForBuyCard_3() {
                     .size(
                         width = 150.dp,
                         height = 150.dp
-                    ),
+                    )
+                    .clickable {
+                        amtMyWallet = amtMyWallet-value
+                    },
                 contentScale = ContentScale.Crop
             )
             Text(
-                text = "スマートウォッチ",
+                text = "スマートゲーム",
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold
             )
-            Text(text = "20000円")
+            Text(text = value.toString()+"円")
 
         }
     }
@@ -208,6 +230,7 @@ fun ProdForBuyCard_3() {
 
 @Composable
 fun ProdForBuyCard_4() {
+    val value:Int = 10000
     Card(
         modifier = Modifier
             .padding(
@@ -228,22 +251,25 @@ fun ProdForBuyCard_4() {
                     .size(
                         width = 150.dp,
                         height = 150.dp
-                    ),
+                    )
+                    .clickable {
+                        amtMyWallet = amtMyWallet-value
+                    },
                 contentScale = ContentScale.Crop
             )
             Text(
-                text = "スマートウォッチ",
+                text = "スマートシューズ",
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold
             )
-            Text(text = "20000円")
+            Text(text = value.toString()+"円")
 
         }
     }
 }
 
 @Composable
-fun BuyButton(){
+fun BuyButton() {
     Button(
         onClick = { /*TODO*/ },
         shape = RoundedCornerShape(10.dp),
