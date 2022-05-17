@@ -4,6 +4,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -42,7 +44,11 @@ fun BuyingScreen(navController: NavController) {
             }
 
 
-            Column (){
+            Column (
+                modifier = Modifier.padding(
+                    top = 30.dp
+                )
+                    ){
                 Row {
                     ProdForBuyCard_1()
                     ProdForBuyCard_2()
@@ -51,6 +57,13 @@ fun BuyingScreen(navController: NavController) {
                     ProdForBuyCard_3()
                     ProdForBuyCard_4()
                 }
+            }
+            Box(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .fillMaxSize()
+                    ){
+                BuyButton()
             }
         }
 
@@ -224,6 +237,17 @@ fun ProdForBuyCard_4() {
             Text(text = "20000円")
 
         }
+    }
+}
+
+@Composable
+fun BuyButton(){
+    Button(
+        onClick = { /*TODO*/ },
+        shape = RoundedCornerShape(20.dp),
+        elevation = ButtonDefaults.elevation(20.dp)
+    ) {
+        Text(text = "買う")
     }
 }
 
