@@ -24,14 +24,15 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.ururun.ui.screens.HomeScreen
-
+import com.example.ururun.ui.screens.BuyingScreen
+import com.example.ururun.ui.screens.SellingScreen
 
 @Composable
 fun Navigation(navController: NavHostController) {
 
     NavHost(navController = navController, startDestination = "buying") {
-        composable("buying") { BuyingScreen() }
-        composable("selling") { SellingScreen() }
+        composable("buying") { BuyingScreen(navController) }
+        composable("selling") { SellingScreen(navController) }
     }
 
 
@@ -74,24 +75,4 @@ fun BottomNavigationBar(
         }
     }
 
-}
-
-@Composable
-fun BuyingScreen() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text = "buy")
-    }
-}
-
-@Composable
-fun SellingScreen() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text = "sell")
-    }
 }
