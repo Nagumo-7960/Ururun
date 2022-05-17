@@ -25,7 +25,9 @@ import com.example.ururun.R
 @Composable
 fun BuyingScreen(navController: NavController) {
     Box(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White),
     ) {
         Column(modifier = Modifier.fillMaxSize()) {
             Column(modifier = Modifier.fillMaxWidth()) {
@@ -59,7 +61,7 @@ fun BuyingScreen(navController: NavController) {
                 }
             }
             Box(
-                horizontalAlignment = Alignment.CenterHorizontally,
+                contentAlignment = Alignment.Center,
                 modifier = Modifier
                     .fillMaxSize()
                     ){
@@ -244,10 +246,21 @@ fun ProdForBuyCard_4() {
 fun BuyButton(){
     Button(
         onClick = { /*TODO*/ },
-        shape = RoundedCornerShape(20.dp),
-        elevation = ButtonDefaults.elevation(20.dp)
+        shape = RoundedCornerShape(10.dp),
+        elevation = ButtonDefaults.elevation(5.dp),
+        modifier = Modifier
+            .width(100.dp)
+            .height(50.dp),
+        colors = ButtonDefaults.textButtonColors(
+            backgroundColor = Color.Cyan,
+            contentColor = Color.White
+        )
     ) {
-        Text(text = "買う")
+        Text(
+            text = "買う",
+            fontWeight = FontWeight.Bold,
+            fontSize = 22.sp
+        )
     }
 }
 
