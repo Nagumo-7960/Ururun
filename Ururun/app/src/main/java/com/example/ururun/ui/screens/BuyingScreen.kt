@@ -19,16 +19,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.ururun.R
+import com.example.ururun.ui.screens.BuyingScreenViewModel
 
 var amtMyWallet: Int = 3000000
 
 
 
 @Composable
-fun BuyingScreen(navController: NavController) {
+fun BuyingScreen(navController: NavController,viewModel: BuyingScreenViewModel) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -122,7 +124,7 @@ fun ProdForBuyCard_1() {
 
             )
             .clickable {
-                       amtMyWallet = amtMyWallet-value
+                amtMyWallet = amtMyWallet - value
             },
         elevation = 10.dp,
         shape = RoundedCornerShape(20.dp)
@@ -174,7 +176,7 @@ fun ProdForBuyCard_2() {
                         height = 150.dp
                     )
                     .clickable {
-                        amtMyWallet = amtMyWallet-value
+                        amtMyWallet = amtMyWallet - value
                     },
                 contentScale = ContentScale.Crop
             )
@@ -213,7 +215,7 @@ fun ProdForBuyCard_3() {
                         height = 150.dp
                     )
                     .clickable {
-                        amtMyWallet = amtMyWallet-value
+                        amtMyWallet = amtMyWallet - value
                     },
                 contentScale = ContentScale.Crop
             )
@@ -253,7 +255,7 @@ fun ProdForBuyCard_4() {
                         height = 150.dp
                     )
                     .clickable {
-                        amtMyWallet = amtMyWallet-value
+                        amtMyWallet = amtMyWallet - value
                     },
                 contentScale = ContentScale.Crop
             )
