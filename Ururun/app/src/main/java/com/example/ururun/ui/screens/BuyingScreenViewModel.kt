@@ -5,11 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class BuyingScreenViewModel:ViewModel(){
-    private val _amtMyWallet = MutableLiveData(3000000)
+    private val _amtMyWallet = MutableLiveData(0)
     val amtMyWallet: LiveData<Int>get() = _amtMyWallet
 
-    fun RefeshMyWallet(productValue:Int){
+    fun RefreshMyWallet(productValue:Int){
         _amtMyWallet.value = _amtMyWallet.value!! - productValue
     }
-
 }

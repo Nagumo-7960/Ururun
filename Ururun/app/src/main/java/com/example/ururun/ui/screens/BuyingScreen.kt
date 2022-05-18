@@ -126,7 +126,7 @@ fun ProdForBuyCard_1(viewModel: BuyingScreenViewModel) {
 
             )
             .clickable {
-                viewModel.RefeshMyWallet(value)
+                viewModel.RefreshMyWallet(value)
             },
         elevation = 10.dp,
         shape = RoundedCornerShape(20.dp)
@@ -178,7 +178,7 @@ fun ProdForBuyCard_2(viewModel: BuyingScreenViewModel) {
                         height = 150.dp
                     )
                     .clickable {
-                        viewModel.RefeshMyWallet(value)
+                        viewModel.RefreshMyWallet(value)
                     },
                 contentScale = ContentScale.Crop
             )
@@ -217,7 +217,7 @@ fun ProdForBuyCard_3(viewModel: BuyingScreenViewModel) {
                         height = 150.dp
                     )
                     .clickable {
-                        viewModel.RefeshMyWallet(value)
+                        viewModel.RefreshMyWallet(value)
                     },
                 contentScale = ContentScale.Crop
             )
@@ -257,7 +257,7 @@ fun ProdForBuyCard_4(viewModel: BuyingScreenViewModel) {
                         height = 150.dp
                     )
                     .clickable {
-                        viewModel.RefeshMyWallet(value)
+                        viewModel.RefreshMyWallet(value)
                     },
                 contentScale = ContentScale.Crop
             )
