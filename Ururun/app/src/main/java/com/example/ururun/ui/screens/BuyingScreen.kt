@@ -10,6 +10,7 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -25,12 +26,13 @@ import androidx.navigation.compose.rememberNavController
 import com.example.ururun.R
 import com.example.ururun.ui.screens.BuyingScreenViewModel
 
-var amtMyWallet: Int = 3000000
+//var amtMyWallet: Int = 3000000
 
 
 
 @Composable
 fun BuyingScreen(navController: NavController,viewModel: BuyingScreenViewModel) {
+    val amtMyWallet = viewModel.amtMyWallet.observeAsState()
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -47,7 +49,7 @@ fun BuyingScreen(navController: NavController,viewModel: BuyingScreenViewModel) 
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         MyWalletIcon()
-                        AmtMyWallet()
+                        AmtMyWallet(viewModel)
                     }
                 }
             }
@@ -62,12 +64,12 @@ fun BuyingScreen(navController: NavController,viewModel: BuyingScreenViewModel) 
                     )
                 ) {
                     Row {
-                        ProdForBuyCard_1()
-                        ProdForBuyCard_2()
+                        ProdForBuyCard_1(viewModel)
+                        ProdForBuyCard_2(viewModel)
                     }
                     Row {
-                        ProdForBuyCard_3()
-                        ProdForBuyCard_4()
+                        ProdForBuyCard_3(viewModel)
+                        ProdForBuyCard_4(viewModel)
                     }
                 }
             }
@@ -100,9 +102,9 @@ fun MyWalletIcon() {
 }
 
 @Composable
-fun AmtMyWallet() {
+fun AmtMyWallet(viewModel: BuyingScreenViewModel) {
     Text(
-        text = amtMyWallet.toString() + "円",
+        text = viewModel.amtMyWallet.value.toString() + "円",
         modifier = Modifier
             .padding(
                 start = 10.dp
@@ -112,7 +114,7 @@ fun AmtMyWallet() {
 }
 
 @Composable
-fun ProdForBuyCard_1() {
+fun ProdForBuyCard_1(viewModel: BuyingScreenViewModel) {
     val value:Int = 30000
     Card(
         modifier = Modifier
@@ -124,7 +126,7 @@ fun ProdForBuyCard_1() {
 
             )
             .clickable {
-                amtMyWallet = amtMyWallet - value
+                viewModel.RefeshMyWallet(value)
             },
         elevation = 10.dp,
         shape = RoundedCornerShape(20.dp)
@@ -152,7 +154,7 @@ fun ProdForBuyCard_1() {
 }
 
 @Composable
-fun ProdForBuyCard_2() {
+fun ProdForBuyCard_2(viewModel: BuyingScreenViewModel) {
     val value:Int = 20000
     Card(
         modifier = Modifier
@@ -176,7 +178,7 @@ fun ProdForBuyCard_2() {
                         height = 150.dp
                     )
                     .clickable {
-                        amtMyWallet = amtMyWallet - value
+                        viewModel.RefeshMyWallet(value)
                     },
                 contentScale = ContentScale.Crop
             )
@@ -192,7 +194,7 @@ fun ProdForBuyCard_2() {
 }
 
 @Composable
-fun ProdForBuyCard_3() {
+fun ProdForBuyCard_3(viewModel: BuyingScreenViewModel) {
     val value:Int = 25000
     Card(
         modifier = Modifier
@@ -215,7 +217,7 @@ fun ProdForBuyCard_3() {
                         height = 150.dp
                     )
                     .clickable {
-                        amtMyWallet = amtMyWallet - value
+                        viewModel.RefeshMyWallet(value)
                     },
                 contentScale = ContentScale.Crop
             )
@@ -231,7 +233,7 @@ fun ProdForBuyCard_3() {
 }
 
 @Composable
-fun ProdForBuyCard_4() {
+fun ProdForBuyCard_4(viewModel: BuyingScreenViewModel) {
     val value:Int = 10000
     Card(
         modifier = Modifier
@@ -255,7 +257,7 @@ fun ProdForBuyCard_4() {
                         height = 150.dp
                     )
                     .clickable {
-                        amtMyWallet = amtMyWallet - value
+                        viewModel.RefeshMyWallet(value)
                     },
                 contentScale = ContentScale.Crop
             )
@@ -296,5 +298,5 @@ fun BuyButton() {
 @Composable
 fun PreviewBuyingScreen() {
     val navController = rememberNavController()
-    BuyingScreen(navController)
+    BuyingScreen(navController, viewModel = viewModel())
 }
