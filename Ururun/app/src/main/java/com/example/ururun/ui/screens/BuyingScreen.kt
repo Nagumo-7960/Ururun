@@ -1,5 +1,6 @@
 package com.example.ururun.ui.screens
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -32,7 +33,7 @@ import com.example.ururun.ui.screens.BuyingScreenViewModel
 
 @Composable
 fun BuyingScreen(navController: NavController,viewModel: BuyingScreenViewModel) {
-    val amtMyWallet = viewModel.amtMyWallet.observeAsState()
+    val amtMyWallet = viewModel.amtMyWallet.observeAsState().value
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -49,7 +50,7 @@ fun BuyingScreen(navController: NavController,viewModel: BuyingScreenViewModel) 
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         MyWalletIcon()
-                        AmtMyWallet(viewModel)
+                        AmtMyWallet(amtMyWallet)
                     }
                 }
             }
@@ -102,9 +103,9 @@ fun MyWalletIcon() {
 }
 
 @Composable
-fun AmtMyWallet(viewModel: BuyingScreenViewModel) {
+fun AmtMyWallet(amtMyWallet:Int?) {
     Text(
-        text = viewModel.amtMyWallet.value.toString() + "円",
+        text = amtMyWallet.toString() + "円",
         modifier = Modifier
             .padding(
                 start = 10.dp
@@ -127,6 +128,7 @@ fun ProdForBuyCard_1(viewModel: BuyingScreenViewModel) {
             )
             .clickable {
                 viewModel.RefreshMyWallet(value)
+                Log.d("refresh",viewModel.amtMyWallet.value.toString())
             },
         elevation = 10.dp,
         shape = RoundedCornerShape(20.dp)
