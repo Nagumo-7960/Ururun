@@ -9,7 +9,7 @@ class BuyingScreenViewModel : ViewModel() {
     val amtMyWallet: LiveData<Int> get() = _amtMyWallet
 
     fun RefreshMyWallet(productValue: Int) {
-        _amtMyWallet.postValue(amtMyWallet.value!! - productValue)
-//        _amtMyWallet.value = _amtMyWallet.value!! - productValue
+//        _amtMyWallet.postValue(amtMyWallet.value!! - productValue)
+        _amtMyWallet.value = _amtMyWallet.value!! - productValue
     }
 }
