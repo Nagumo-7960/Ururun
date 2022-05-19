@@ -25,13 +25,14 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.ururun.ui.screens.HomeScreen
 import com.example.ururun.ui.screens.BuyingScreen
+import com.example.ururun.ui.screens.BuyingScreenViewModel
 import com.example.ururun.ui.screens.SellingScreen
 
 @Composable
 fun Navigation(navController: NavHostController) {
 
     NavHost(navController = navController, startDestination = "buying") {
-        composable("buying") { BuyingScreen(navController) }
+        composable("buying") { BuyingScreen(navController,  BuyingScreenViewModel()) }
         composable("selling") { SellingScreen(navController) }
     }
 
