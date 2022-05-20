@@ -300,5 +300,5 @@ fun BuyButton() {
 @Composable
 fun PreviewBuyingScreen() {
     val navController = rememberNavController()
-    BuyingScreen(navController, viewModel = viewModel())
+    BuyingScreen(navController, viewModel())
 }

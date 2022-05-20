@@ -1,19 +1,45 @@
 package com.example.ururun.ui.screens
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Text
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun SellingScreen(navController: NavController) {
     Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White),
     ) {
-        Text(text = "sell")
+        Column(modifier = Modifier.fillMaxSize()) {
+            Column(modifier = Modifier.fillMaxWidth()) {
+                Column(
+                    modifier = Modifier
+                        .padding(
+                            top = 10.dp,
+                            start = 10.dp
+                        )
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        MyWalletIcon()
+//                        AmtMyWallet(amtMyWallet)
+                    }
+                }
+            }
+        }
     }
+}
+
+@Preview
+@Composable
+fun PreviewScreen() {
+    val navController = rememberNavController()
+    SellingScreen(navController)
 }
