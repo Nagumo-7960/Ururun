@@ -12,4 +12,9 @@ class BuyingScreenViewModel : ViewModel() {
 //        _amtMyWallet.postValue(amtMyWallet.value!! - productValue)
         _amtMyWallet.value = _amtMyWallet.value!! - productValue
     }
+
+    fun sale(productValue: Int) {
+//        _amtMyWallet.postValue(amtMyWallet.value!! - productValue)
+        _amtMyWallet.value = _amtMyWallet.value!! + productValue
+    }
 }
