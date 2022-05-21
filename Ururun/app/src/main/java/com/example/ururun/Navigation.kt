@@ -33,7 +33,7 @@ fun Navigation(navController: NavHostController) {
 
     NavHost(navController = navController, startDestination = "buying") {
         composable("buying") { BuyingScreen(navController,  BuyingScreenViewModel()) }
-        composable("selling") { SellingScreen(navController) }
+        composable("selling") { SellingScreen(navController, BuyingScreenViewModel()) }
     }
 
 
