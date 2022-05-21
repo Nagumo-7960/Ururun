@@ -127,7 +127,7 @@ fun ProdForBuyCard_1(viewModel: BuyingScreenViewModel) {
 
             )
             .clickable {
-                viewModel.RefreshMyWallet(value)
+                viewModel.purchase(value)
                 Log.d("refresh",viewModel.amtMyWallet.value.toString())
             },
         elevation = 10.dp,
@@ -180,7 +180,7 @@ fun ProdForBuyCard_2(viewModel: BuyingScreenViewModel) {
                         height = 150.dp
                     )
                     .clickable {
-                        viewModel.RefreshMyWallet(value)
+                        viewModel.purchase(value)
                     },
                 contentScale = ContentScale.Crop
             )
@@ -219,7 +219,7 @@ fun ProdForBuyCard_3(viewModel: BuyingScreenViewModel) {
                         height = 150.dp
                     )
                     .clickable {
-                        viewModel.RefreshMyWallet(value)
+                        viewModel.purchase(value)
                     },
                 contentScale = ContentScale.Crop
             )
@@ -259,7 +259,7 @@ fun ProdForBuyCard_4(viewModel: BuyingScreenViewModel) {
                         height = 150.dp
                     )
                     .clickable {
-                        viewModel.RefreshMyWallet(value)
+                        viewModel.purchase(value)
                     },
                 contentScale = ContentScale.Crop
             )
