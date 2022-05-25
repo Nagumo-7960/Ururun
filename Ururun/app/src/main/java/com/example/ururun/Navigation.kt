@@ -17,6 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.max
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -32,8 +33,9 @@ import com.example.ururun.ui.screens.SellingScreen
 fun Navigation(navController: NavHostController) {
 
     NavHost(navController = navController, startDestination = "buying") {
-        composable("buying") { BuyingScreen(navController,  BuyingScreenViewModel()) }
-        composable("selling") { SellingScreen(navController, BuyingScreenViewModel()) }
+        val viewModel:BuyingScreenViewModel = BuyingScreenViewModel()
+        composable("buying") { BuyingScreen(navController,  viewModel) }
+        composable("selling") { SellingScreen(navController, viewModel) }
     }
 
 
