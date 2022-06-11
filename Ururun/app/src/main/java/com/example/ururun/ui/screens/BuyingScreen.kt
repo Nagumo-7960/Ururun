@@ -33,7 +33,7 @@ import com.example.ururun.ui.screens.BuyingScreenViewModel
 
 @Composable
 fun BuyingScreen(navController: NavController,viewModel: BuyingScreenViewModel) {
-    val amtMyWallet = viewModel.amtMyWallet.observeAsState().value
+    val myMoney = viewModel.amtMyWallet.observeAsState().value
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -50,7 +50,7 @@ fun BuyingScreen(navController: NavController,viewModel: BuyingScreenViewModel) 
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         MyWalletIcon()
-                        AmtMyWallet(amtMyWallet)
+                        MyMoney(myMoney)
                     }
                 }
             }
@@ -103,9 +103,9 @@ fun MyWalletIcon() {
 }
 
 @Composable
-fun AmtMyWallet(amtMyWallet:Int?) {
+fun MyMoney(myMoney:Int?) {
     Text(
-        text = amtMyWallet.toString() + "円",
+        text = myMoney.toString() + "円",
         modifier = Modifier
             .padding(
                 start = 10.dp

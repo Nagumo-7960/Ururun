@@ -45,7 +45,7 @@ fun SellingScreen(navController: NavController,viewModel: BuyingScreenViewModel)
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         MyWalletIcon()
-                        AmtMyWallet(amtMyWallet)
+                        MyMoney(amtMyWallet)
                     }
                 }
             }
