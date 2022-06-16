@@ -24,8 +24,14 @@ fun HomeScreen(toStart:() -> Unit) {
     Box (
         modifier = Modifier
             .fillMaxSize()
+            .clickable(
+                enabled = true,
+                onClick = {
+                    toStart()
+                }
+            )
             ){
-        HomeBackground(toStart)
+        HomeBackground()
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -36,7 +42,7 @@ fun HomeScreen(toStart:() -> Unit) {
                     modifier = Modifier.fillMaxHeight(),
                     verticalAlignment = Alignment.CenterVertically
                         ){
-                    HomeTitleText(toStart)
+                    HomeTitleText()
                 }
             }
         }
@@ -44,34 +50,22 @@ fun HomeScreen(toStart:() -> Unit) {
 }
 
 @Composable
-fun HomeBackground(toStart:() -> Unit) {
+fun HomeBackground() {
     Image(
         painter = painterResource(id = R.drawable.home),
         contentDescription = "home_background",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier.fillMaxSize()
-            .clickable(
-                enabled = true,
-                onClick = {
-                    toStart()
-                }
-            )
+
     )
 }
 @Composable
-fun HomeTitleText(toStart:() -> Unit){
+fun HomeTitleText(){
     Text(
         text = "うるるん",
         fontSize = 80.sp,
         fontWeight = FontWeight.Bold,
         color = Color.White,
-        modifier = Modifier
-            .clickable(
-                enabled = true,
-                onClick = {
-                    toStart()
-                }
-            )
     )
 
 }
