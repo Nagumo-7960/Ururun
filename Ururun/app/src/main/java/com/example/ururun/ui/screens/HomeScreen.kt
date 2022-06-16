@@ -1,6 +1,7 @@
 package com.example.ururun.ui.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -19,11 +20,12 @@ import androidx.navigation.compose.rememberNavController
 import com.example.ururun.R
 
 @Composable
-fun HomeScreen(navController: NavController) {
+fun HomeScreen(toStart:() -> Unit) {
     Box (
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
             ){
-        HomeBackground()
+        HomeBackground(toStart)
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -34,7 +36,7 @@ fun HomeScreen(navController: NavController) {
                     modifier = Modifier.fillMaxHeight(),
                     verticalAlignment = Alignment.CenterVertically
                         ){
-                    HomeTitleText()
+                    HomeTitleText(toStart)
                 }
             }
         }
@@ -42,27 +44,41 @@ fun HomeScreen(navController: NavController) {
 }
 
 @Composable
-fun HomeBackground() {
+fun HomeBackground(toStart:() -> Unit) {
     Image(
         painter = painterResource(id = R.drawable.home),
         contentDescription = "home_background",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier.fillMaxSize()
+            .clickable(
+                enabled = true,
+                onClick = {
+                    toStart()
+                }
+            )
     )
 }
 @Composable
-fun HomeTitleText(){
+fun HomeTitleText(toStart:() -> Unit){
     Text(
         text = "うるるん",
         fontSize = 80.sp,
         fontWeight = FontWeight.Bold,
-        color = Color.White
+        color = Color.White,
+        modifier = Modifier
+            .clickable(
+                enabled = true,
+                onClick = {
+                    toStart()
+                }
+            )
     )
+
 }
 
 @Preview
 @Composable
 fun PreviewHomeScreen() {
     val navController = rememberNavController()
-    HomeScreen(navController)
+    HomeScreen{}
 }

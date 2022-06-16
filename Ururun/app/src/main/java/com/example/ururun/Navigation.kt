@@ -32,10 +32,15 @@ import com.example.ururun.ui.screens.SellingScreen
 @Composable
 fun Navigation(navController: NavHostController) {
 
-    NavHost(navController = navController, startDestination = "buying") {
+    NavHost(navController = navController, startDestination = "home") {
         val viewModel:BuyingScreenViewModel = BuyingScreenViewModel()
         composable("buying") { BuyingScreen(navController,  viewModel) }
         composable("selling") { SellingScreen(navController, viewModel) }
+        composable("home"){
+            HomeScreen {
+                navController.navigate("buying")
+            }
+        }
     }
 
 
